@@ -14,6 +14,23 @@ function binarySearch(arr, target){
     return -1;
 }
 
+
+// ES6 Solution
+binarySearch2 = (arr, target) => {
+    left = 0;
+    right = arr.length - 1;
+    while ( right >= left ){   // 5
+        let mid = Math.floor( (left+right)/2 );  // 2
+        if( arr[mid] == target){  //7 ==6
+            return mid;
+        } else if( arr[mid] > target){ //7 > 6
+            right = mid -1;
+        } else {
+            left = mid +1;
+        }
+    }
+    return -1;
+}
 var arr = [5,6,7,8,9,10];
 var target = 6;
-console.log(binarySearch(arr, target));
+console.log(binarySearch2(arr, target));
