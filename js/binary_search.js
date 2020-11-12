@@ -16,7 +16,7 @@ function binarySearch(arr, target){
 
 
 // ES6 Solution
-binarySearch2 = (arr, target) => {
+binarySearchES6 = (arr, target) => {
     left = 0;
     right = arr.length - 1;
     while ( right >= left ){   // 5
@@ -33,4 +33,4 @@ binarySearch2 = (arr, target) => {
 }
 var arr = [5,6,7,8,9,10];
 var target = 6;
-console.log(binarySearch2(arr, target));
+console.log(binarySearchES6(arr, target));
