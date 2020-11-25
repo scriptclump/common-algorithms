@@ -59,3 +59,15 @@ var kidsWithCandies = function(candies, extraCandies) {
 //let candies = [4,2,1,1,2], extraCandies = 1; // [true,false,false,false,false] 
 let candies = [12,1,12], extraCandies = 10; // [true,false,true]
 console.log(kidsWithCandies(candies, extraCandies));
+
+
+var kidsWithCandies2 = function(candies, extraCandies) {
+    let max = Math.max(...candies);
+    return candies.map(candy => (candy + extraCandies) >= max ? true : false);
+};
+
+var kidsWithCandies3 = function(candies, extraCandies) {    
+    return candies.map(e => { return ((e+extraCandies) >= Math.max.apply(null, candies)) ? true : false; });
+};
+
+console.log(kidsWithCandies2(candies, extraCandies));
