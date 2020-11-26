@@ -58,6 +58,8 @@ var numIdenticalPairs2 = function(nums) {
     // n choose r (nCr) => n! / ((n-r)!*r!)
 };
 
+
+// Reduce & slice solution
 function numIdenticalPairs2(nums) {
     return nums.reduce((acc, curr, i) => {
         nums.slice(++i).forEach(v => {
