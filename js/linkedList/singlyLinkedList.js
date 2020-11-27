@@ -1,13 +1,4 @@
-class Node{
-  constructor(value){
-    this.newNode = {
-      value: value,
-      next: null
-    };
-  }
-}
-
-class LinkedList {
+class SinglyLinkedList {
   constructor(value){
     this.head = {
       value: value,
@@ -17,6 +8,17 @@ class LinkedList {
     }
     this.tail = this.head;
     this.length = 1;
+  }
+
+  printList(){    
+    let arr = [];
+    let currentNode = this.head;
+    while(currentNode !== null){
+      arr.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    console.log(arr);
+    return arr;
   }
 
   append(value){
@@ -30,22 +32,90 @@ class LinkedList {
     return this;
   }
 
-  prepend(value){
-    
+  prepend(value){    
+    const newNode = {
+      value: value,
+      next:  null
+    };
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
     return this;
-
   }
+
+  insert(index, value){    
+    const newNode = {
+      value: value,
+      next:  null
+    };
+
+    if(index == 0){
+      return this.prepend(value);
+    }
+    if(index >= this.length){
+      return this.append(value);
+    }
+
+    let leader = this.traverseToIndex(index -1);
+    let holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+    return this;
+  }
+
+  delete(index){    
+    let leader = this.traverseToIndex(index -1);
+    let unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
+    this.length--;
+    return this;
+  }
+
+  traverseToIndex(index){
+    let counter = 0;
+    let currentNode = this.head;
+    while(counter != index){
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
+
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+
+    while(second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+
+    this.head.next = null;
+    this.head = first;
+    return this.printList();
+  }
+
+
+
+
 }
 
-const myLinkedList = new LinkedList(10);
+const myLinkedList = new SinglyLinkedList(10);
 myLinkedList.append(15);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
-console.log(myLinkedList);
-
+myLinkedList.insert(2,90);
+myLinkedList.insert(0,100);
+myLinkedList.insert(10,50);
+myLinkedList.delete(4);
+myLinkedList.printList();
 
 
 
