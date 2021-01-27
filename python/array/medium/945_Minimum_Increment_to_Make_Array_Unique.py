@@ -21,3 +21,16 @@
 
 # 0 <= A.length <= 40000
 # 0 <= A[i] < 40000
+
+
+def minIncrementForUnique(A):
+    A.sort()
+    moves = 0
+    for i in range(len(A)):
+        if (A[i-1] >= A[i]):
+            increment = A[i-1] - A[i] + 1
+            A[i] += increment
+            moves += increment
+    return moves
+    # Time Complexity: O(nlog(n))
+    # Space Complexity: O(1)
