@@ -1,23 +1,22 @@
-// var moveZerosToEnd = (N) => {
+var moveZerosToEnd2 = (N) => {
 
-//     if(N.length < 1){
-//         console.error('Invalid array size');
-//         return -1;
-//     }
-//     j=0;
-//     zeros = 0;
-//     for(let i=0; i<=N.length-1; i++){
-//         if(N[i] != 0){
-//             N[j] = N[i];
-//             j++;            
-//         }else{
-//             zeros++;
-//         }
-//     }
-//     //console.log(j,N.length);
-//     // N.fill(0,j,N.length);
-//     return N;
-// }
+    if(N.length < 1){
+        console.error('Invalid array size');
+        return -1;
+    }
+    j=0;
+    for(let i=0; i<=N.length-1; i++){
+        if(N[i] != 0){
+            N[j] = N[i];
+            j++;            
+        }
+    }
+    for(let k=j; k<=N.length-1; k++){
+        N[k] =0
+    }
+    
+    return N;
+}
 
 var moveZerosToEnd = function(nums) {
     for (let i = nums.length - 1; i >= 0; i--) {
