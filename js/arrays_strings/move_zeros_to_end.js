@@ -19,7 +19,7 @@
 //     return N;
 // }
 
-var moveZeroes = function(nums) {
+var moveZerosToEnd = function(nums) {
     for (let i = nums.length - 1; i >= 0; i--) {
         let num = nums[i];
         if (!num) {
@@ -27,6 +27,7 @@ var moveZeroes = function(nums) {
             nums.push(0);
         }
     }
+    return nums;
 };
 
 N = [2,0,1,0,7,0,0,1];
