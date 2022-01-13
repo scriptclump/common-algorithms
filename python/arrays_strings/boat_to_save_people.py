@@ -13,10 +13,10 @@ class Solution:
             else:
                 right-=1           
             boats+=1
-        print(boats)
         return boats
 
 s = Solution()
 people = [3,2,2,1]
 limit = 3
-s.numRescueBoats(people, limit)
+ans = s.numRescueBoats(people, limit)
+print(ans)
