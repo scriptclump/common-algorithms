@@ -16,6 +16,6 @@ var groupAnagrams = (N) => {
 
 N = ["eat", "bat", "ate", "tab", "ram", "arm"];
 console.log(groupAnagrams(N));
-
+// [ [ 'eat', 'ate' ], [ 'bat', 'tab' ], [ 'ram', 'arm' ] ]
 // Time Complexity O( N * M * Log(M))
 // Space complexity O(N) //Additional storage to store the hash values
