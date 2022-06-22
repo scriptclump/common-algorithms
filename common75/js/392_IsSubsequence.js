@@ -25,3 +25,22 @@
  
 
 // Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109, and you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?
+
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isSubsequence = function(s, t) {   
+    let a = s.split("");
+    let b = 0;
+    for (let i = 0; i < t.length; i++) {
+        if (a[b] === t[i]) {
+            b++;
+        }
+    }
+    return b === s.length;
+};
+let s = "abc", t = "ahbgdc";
+console.log(isSubsequence(s,t))
