@@ -33,19 +33,19 @@
  * @return {number}
  */
  var lengthOfLongestSubstring = function(s) {
-    let l = 0,
-     r = 0,
-     ans = 0,
-     m = {},
-     n = str.length;
-    while(left < n && right < n){
-        let el = str[right];
-        if(el in m){
-            left = Math.max(left, m[el]+1);
-        }
-        m[el] = r;
-        ans = Math.max(ans, right-left +1 ); 
-        right++;
-    }
-    return ans;
+    let left = 0,
+    right = 0,
+    ans = 0,
+    m = {},
+    n = s.length;
+   while(left < n && right < n){
+       let el = s[right];
+       if(el in m){
+           left = Math.max(left, m[el]+1);
+       }
+       m[el] = right;
+       ans = Math.max(ans, right-left +1 ); 
+       right++;
+   }
+   return ans;
 };
