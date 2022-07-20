@@ -44,14 +44,15 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {   
-    for (let i=nums.length-2; i>0; i++){
-        if (nums[i] === nums[i + 1]) {
+var removeDuplicates = function(nums) {
+    if(nums.length < 1) return 1;
+    for (let i=nums.length; i>0; i--){
+        if (nums[i] === nums[i - 1]) {
             nums.splice(i, 1);
         }
     }
-    return nums;  
+    return nums.length;  
 };
-nums = [0,0,1,1,1,2,2,3,3,4]; // Output: 5, nums = [0,1,2,3,4]
-nums = [1,1,2]; // Output: 2, nums = [1,2]
-console.log(removeDuplicates(nums)); 
+// nums = [0,0,1,1,1,2,2,3,3,4]; // Output: 5, nums = [0,1,2,3,4]
+nums = [1]; // Output: 2, nums = [1,2]
+console.log('res',removeDuplicates(nums)); 
