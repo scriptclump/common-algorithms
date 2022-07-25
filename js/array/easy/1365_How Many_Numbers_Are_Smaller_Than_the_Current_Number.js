@@ -30,7 +30,7 @@
 // 0 <= nums[i] <= 100
 
 
-/**
+/** brut force approach
  * @param {number[]} nums
  * @return {number[]}
  */
@@ -48,7 +48,19 @@ var smallerNumbersThanCurrent = function(nums) {
     return res;
 };
 
+var smallerNumbersThanCurrent1 = function(nums) {
+    nums.sort( (x,y) => x-y);
+    for (let i = 0; i < nums.length; i++) {
+        nums[i] = i;
+    }
+    return nums;
+};
+
+
 var smallerNumbersThanCurrent2 = function (nums) {
     const sortedNums = Array.from(nums).sort((a, b) => a - b);
     return nums.map(x => sortedNums.indexOf(x));
 };
+
+const nums = [6,5,4,8]; // [2,1,0,3]
+console.log('res',smallerNumbersThanCurrent1(nums))

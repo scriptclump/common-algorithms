@@ -65,10 +65,14 @@ var threeSum = function (nums) {
     let res = [];
     for (let i = 0; i < nums.length; i++) {
       // if nums[i] > 0, nums[i] + some two numbers in nums[i+1...end] can never equal 0
+      // Look for only negetive value
+     // console.log('result' + i, nums[i])
       if (nums[i] > 0) {
         break;
       }
+
       if (i === 0 || nums[i] !== nums[i - 1]) {
+        console.log(nums, i + 1, nums.length - 1, -nums[i], res);
         twoSum(nums, i + 1, nums.length - 1, -nums[i], res);
       }
     }
@@ -94,3 +98,7 @@ var threeSum = function (nums) {
       }
     }
   };
+
+
+  const nums = [-1,0,1,2,-1,-4];
+  console.log('Result = ',threeSum(nums))
