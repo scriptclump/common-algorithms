@@ -51,3 +51,5 @@
     if(carry!==0) digits.unshift(1);
     return digits;
 };
+const digits = [1,2,3];
+console.log('Result-', plusOne(digits))
