@@ -34,9 +34,15 @@
  * @param {number} k
  * @return {number[]}
  */
- var addToArrayForm = function(num, k) {
-    
+var addToArrayForm = function(num, k) {
+    let carry = 0;
+    for (let i = num.length-1; i >= 0; i--) {
+        let rem = k%10;        
+    }
 };
+const num = [1,2,0,0], k = 34;
+console.log(addToArrayForm(num, k))
+
 
 // Approach 1: Schoolbook Addition
 // Intuition

@@ -10,7 +10,10 @@ class SinglyLinkedList {
     this.length = 1;
   }
 
-  printList(){    
+  printList(){
+    
+    console.log('Head',this.head);
+    console.log('tail', this.tail)
     let arr = [];
     let currentNode = this.head;
     while(currentNode !== null){
@@ -89,7 +92,7 @@ class SinglyLinkedList {
     let first = this.head;
     this.tail = this.head;
     let second = first.next;
-
+    console.log('second', second)
     while(second) {
       const temp = second.next;
       second.next = first;
@@ -99,7 +102,6 @@ class SinglyLinkedList {
 
     this.head.next = null;
     this.head = first;
-    return this.printList();
   }
 
 
@@ -110,11 +112,13 @@ class SinglyLinkedList {
 const myLinkedList = new SinglyLinkedList(10);
 myLinkedList.append(15);
 myLinkedList.append(16);
-myLinkedList.prepend(1);
-myLinkedList.insert(2,90);
-myLinkedList.insert(0,100);
-myLinkedList.insert(10,50);
-myLinkedList.delete(4);
+// myLinkedList.prepend(1);
+// myLinkedList.insert(2,90);
+// myLinkedList.insert(0,100);
+// myLinkedList.insert(10,50);
+// myLinkedList.delete(4);
+myLinkedList.printList();
+myLinkedList.reverse();
 myLinkedList.printList();
 
 

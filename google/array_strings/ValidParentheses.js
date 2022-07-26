@@ -176,6 +176,7 @@
     }
     for(let i=0;i<s.length;i++){
         let item=s[i]
+        console.log(par[item])
         if(par[item]===undefined){
             result.push(item)
         }
@@ -188,3 +189,5 @@
     }
     return (!result.length)
 };
+const s = "()[]{}"
+console.log(isValid(s))
