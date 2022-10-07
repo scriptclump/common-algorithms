@@ -36,6 +36,10 @@ var isIsomorphic = function(s, t) {
     } 
     let m = new Map();
     for (let i = 0; i < s.length; i++) {
+        console.log('map check', m.has(s[i]))
+        console.log('t value', t[i])
+        console.log('m get', m.get(s[i]))
+        console.log('==================')
         if (m.has(s[i]) && m.get(s[i]) !== t[i]){
             return false;
         } else{
@@ -45,5 +49,5 @@ var isIsomorphic = function(s, t) {
     return new Set([...m.values()]).size === m.size; 
     // this checks if more than one character map to the same character
 };
-let s = "foo", t = "bar"
+let s = "egg", t = "add"
 console.log(isIsomorphic(s,t))
