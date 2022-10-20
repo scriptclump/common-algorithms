@@ -43,14 +43,10 @@ function detectLoop() {
 // Driver code
 push(20);
 push(4);
-push(15);
-push(10);
-push(1);
-push(11);
-push(12);
+
 
 
 // Create loop for testing
-head.next.next.next.next = head;
-
+head.next.next = head;
+console.log(head);
 detectLoop();
