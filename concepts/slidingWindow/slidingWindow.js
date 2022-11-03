@@ -1,5 +1,6 @@
 // Problem Statement:
-// Given an array of integers of size ‘n’, Our aim is to calculate the maximum sum of ‘k’ consecutive elements in the array.
+// Given an array of integers of size ‘n’, Our aim is to calculate the maximum sum of ‘k’ consecutive elements 
+// in the array.
 function maxSum(arr, n, k) {
 		let max = 0;
 		let sum = 0;
