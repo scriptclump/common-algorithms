@@ -61,3 +61,6 @@
 	}
 	return max;
 };
+
+const fruits = ["apple","banana", "apple"];
+console.log('Ans: ',totalFruit(fruits))

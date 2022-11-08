@@ -32,7 +32,7 @@
  * @param {string} s
  * @return {number}
  */
- var lengthOfLongestSubstring = function(s) {
+ var lengthOfLongestSubstring1 = function(s) {
     let left = 0,
     right = 0,
     ans = 0,
@@ -49,3 +49,21 @@
    }
    return ans;
 };
+
+const lengthOfLongestSubstring = (s) => {
+    let left, right, ans = 0;
+    let m = {}
+
+    while(left < s.length && right < s.length){
+        if( s[left] in m){
+            left = Math.max(left, s[left] +1);
+        }
+        m[left] = right;
+        ans = Math.max(ans, right-left +1)
+        right++;
+    }
+    return ans;
+}
+
+const s = "pwwkew";
+console.log('answer=',lengthOfLongestSubstring(s));
