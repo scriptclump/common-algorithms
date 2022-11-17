@@ -32,7 +32,7 @@
  * @param {string} s
  * @return {number}
  */
- var lengthOfLongestSubstring1 = function(s) {
+ var lengthOfLongestSubstring = function(s) {
     let left = 0,
     right = 0,
     ans = 0,
@@ -50,20 +50,28 @@
    return ans;
 };
 
-const lengthOfLongestSubstring = (s) => {
-    let left, right, ans = 0;
-    let m = {}
+/**
+ * Function using Map()
+ * @param {*} s 
+ * @returns 
+ */
+const lengthOfLongestSubstring1 = (s) => {
+    let ans = 0, left =0, right =0;
+    const map = new Map();
 
-    while(left < s.length && right < s.length){
-        if( s[left] in m){
-            left = Math.max(left, s[left] +1);
+    while( left < s.length && right < s.length ){
+        let rightElement = s[right];
+        if(map.get(rightElement) !== undefined){
+            left = Math.max(left, map.get(rightElement)+1);
         }
-        m[left] = right;
-        ans = Math.max(ans, right-left +1)
-        right++;
+        map.set(rightElement, right);
+        ans = Math.max(ans, right-left + 1);
+        right++;      
     }
+
     return ans;
 }
 
-const s = "pwwkew";
-console.log('answer=',lengthOfLongestSubstring(s));
+
+const s = "abcabcbb";
+console.log('answer=',lengthOfLongestSubstring1(s));
