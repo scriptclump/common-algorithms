@@ -11,7 +11,12 @@
 // Concept: we will subtract the element going out of the window and add the element now being
 //  included in the sliding window.
 
-
+/**
+ * Slidig Window apporach
+ * @param {*} arr 
+ * @param {*} k 
+ * @returns 
+ */
 function findMaxAverage(arr, k) {
     let maxAverage, sum = 0;
     if(arr.length < k){
@@ -22,17 +27,13 @@ function findMaxAverage(arr, k) {
         sum += arr[i];
         maxAverage = sum/k;
     }
-
+    // Add newElement & remove past element -- Sliding window
     for(let i=k; i<arr.length; i++){
         sum += arr[i] - arr[i -k];
         maxAverageCurrent = sum/k;
-
-        if(maxAverage < maxAverageCurrent){
-            maxAverage = maxAverageCurrent;
-        }
+        maxAverage = Math.max(maxAverage, maxAverageCurrent);  
     }
     return maxAverage;
-
 }
 
 const arr = [1, 12, -5, -6, 50, 3];
