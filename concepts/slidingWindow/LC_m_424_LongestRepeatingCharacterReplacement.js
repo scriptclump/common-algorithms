@@ -44,9 +44,12 @@
         }
         let length = right-left+1;
         let maxInMap = Math.max(...map.values());
+        // Highest found character - window length < Character to replace
         if(length - maxInMap <= k){
+            // Compare current length with previus result
             res = (length > res ? length : res);
         }else{
+            // Reduce count from left element
             map.set(leftElement, map.get(leftElement) - 1);
             left++
         }
