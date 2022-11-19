@@ -31,31 +31,34 @@
  * @param {number[]} nums
  * @return {number}
  */
+/*
+We are given only positive integers so as the window size of subarray gets bigger,
+the subarray sum gets bigger.
+
+We keep two pointers: `start` and `end`, which indicate the ends of subarray.
+We start expanding `end` (add element to sum).
+While subarray sum is greater than or equal target, we compare the current window size and 
+that in global variable and store the smaller size and advance `start` pointer and keep
+updating the minimum size.
+We repeat this until the end of array.
+*/
 var minSubArrayLen = function(target, nums) {
-    let left = 0,
-    right = 0,
-    sum = 0,
-    minSize = 0;
-    let map = new Map();
-    while(right < nums.length){
-        sum += nums[right];
-        if( sum === target ){
-            minSize = Math.min(minSize, right-left +1 );
-            right++;            
-        } else if( sum > target ){
-            left++;            
-        } else{
-            right++
+    let start = 0, sum = 0, minSize = Infinity;
+    for (let end = 0; end < nums.length; end++) {
+        // Add current element
+        sum += nums[end];
+        
+        // Get the minimum window size while subarray 
+        // sum is greater than or equal to target
+        while (sum >= target) {
+            minSize = Math.min(minSize, end - start + 1);
+            sum -= nums[start++];
         }
     }
-
-    if( minSize !== 0) {
-        return minSize;
-    } else{
-        return 0;
-    }
+    return minSize === Infinity ? 0 : minSize;
+    // T.C: O(N)
+    // S.C: O(1)
 };
-
 const target = 7;
 const nums = [2,3,1,2,4,3];
-console.log(minSubArrayLen(target, nums))
+console.log("answer=",minSubArrayLen(target, nums))

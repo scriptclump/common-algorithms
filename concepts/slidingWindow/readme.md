@@ -9,7 +9,7 @@ So we want to be able to identify the problems that sliding window pattern works
 - The amazing thing about sliding window problems is that most of the time they can be solved in O(N) time and O(1) space complexity.
 
 
-## Similar LeetCode ProblemsPermalink
+## Similar LeetCode Problems
 - LeetCode 3 - Longest Substring Without Repeating Characters [medium]
 - LeetCode 30 - Substring with Concatenation of All Words [hard]
 - LeetCode 76 - Minimum Window Substring [hard]
