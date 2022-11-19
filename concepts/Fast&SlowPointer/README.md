@@ -1,3 +1,13 @@
+# How to identify?
+This approach is quite useful when dealing with cyclic Linked Lists or Arrays.
+
+When the problem involves something related to cyclic data structures, you should think about Fast & Slow Pointers pattern.
+
+## Similar LeetCode Problems
+- LeetCode 202 - Happy Number [easy]
+- LeetCode 876 - Middle of the Linked List [easy]
+
+
 https://iq.opengenus.org/fast-and-slow-pointer-technique/
 https://emre.me/coding-patterns/fast-slow-pointers/
 https://codeburst.io/fast-and-slow-pointer-floyds-cycle-detection-algorithm-9c7a8693f491
