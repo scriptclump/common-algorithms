@@ -1,13 +1,6 @@
-// // 26. Remove Duplicates from Sorted Array
+// 26. Remove Duplicates from Sorted Array
 // Easy
 
-// 9252
-
-// 12835
-
-// Add to List
-
-// Share
 // Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 
 // Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
@@ -62,5 +55,21 @@
  * @return {number}
  */
  var removeDuplicates = function(nums) {
-    
+    let left = 0, right = 1, res = 1;
+    while(left < nums.length && right < nums.length){        
+        if(nums[left] !== nums[right]){
+            left++;
+            nums[left] = nums[right];
+            res++;
+        }
+        right++
+
+    } 
+    console.log("Modified Nums: ", nums)   
+    return res;
 };
+
+//const nums = [1,1,2];
+const nums = [0,0,1,1,1,2,2,3,3,4];
+// const nums = [0,0,0,0];
+console.log("Ans: ", removeDuplicates(nums))
