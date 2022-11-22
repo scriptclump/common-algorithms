@@ -1,13 +1,6 @@
-// // 27. Remove Element
+// 27. Remove Element
 // Easy
 
-// 4775
-
-// 6474
-
-// Add to List
-
-// Share
 // Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
 
 // Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
@@ -67,5 +60,20 @@
  * @return {number}
  */
  var removeElement = function(nums, val) {
-    
+    let left = 0, right = 0, found = 0;
+    while(left < nums.length && right < nums.length){
+        if(nums[right] === val){  
+            left = right;          
+            nums[left] = nums[right + 1]
+            left++;
+            found++;
+        }
+        right++;
+    }
+    console.log("Modified Array", nums);
+    return nums.length - found;
 };
+
+// const nums = [3,2,2,3], val = 3;
+const nums = [0,1,2,2,3,0,4,2], val = 2; // [0,1,3,0,4,_,_,_]
+console.log("Ans", removeElement(nums, val))

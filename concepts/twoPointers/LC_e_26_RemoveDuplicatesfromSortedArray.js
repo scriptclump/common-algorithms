@@ -63,7 +63,6 @@
             res++;
         }
         right++
-
     } 
     console.log("Modified Nums: ", nums)   
     return res;
