@@ -2,7 +2,9 @@
 
 // A concatenated substring in s is a substring that contains all the strings of any permutation of words concatenated.
 
-// For example, if words = ["ab","cd","ef"], then "abcdef", "abefcd", "cdabef", "cdefab", "efabcd", and "efcdab" are all concatenated strings. "acdbef" is not a concatenated substring because it is not the concatenation of any permutation of words.
+// For example, if words = ["ab","cd","ef"], then "abcdef", "abefcd", "cdabef", "cdefab", "efabcd", and "efcdab" 
+// are all concatenated strings. "acdbef" is not a concatenated substring because it is not the concatenation 
+// of any permutation of words.
 // Return the starting indices of all the concatenated substrings in s. You can return the answer in any order.
 
  
@@ -27,9 +29,12 @@
 // Input: s = "barfoofoobarthefoobarman", words = ["bar","foo","the"]
 // Output: [6,9,12]
 // Explanation: Since words.length == 3 and words[i].length == 3, the concatenated substring has to be of length 9.
-// The substring starting at 6 is "foobarthe". It is the concatenation of ["foo","bar","the"] which is a permutation of words.
-// The substring starting at 9 is "barthefoo". It is the concatenation of ["bar","the","foo"] which is a permutation of words.
-// The substring starting at 12 is "thefoobar". It is the concatenation of ["the","foo","bar"] which is a permutation of words.
+// The substring starting at 6 is "foobarthe". It is the concatenation of ["foo","bar","the"] 
+// which is a permutation of words.
+// The substring starting at 9 is "barthefoo". It is the concatenation of ["bar","the","foo"] 
+// which is a permutation of words.
+// The substring starting at 12 is "thefoobar". It is the concatenation of ["the","foo","bar"] 
+// which is a permutation of words.
  
 
 // Constraints:

@@ -1,6 +1,8 @@
 // 76. Minimum Window Substring
 // Hard
-// Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
+// Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such 
+// that every character in t (including duplicates) is included in the window. 
+// If there is no such substring, return the empty string "".
 // Example 1:
 
 // Input: s = "ADOBECODEBANC", t = "ABC"
@@ -51,7 +53,8 @@
 //increase count variable in that case.
 //we will also keep track of the minimum, while shrinking so that in the end we can return the minimum substr
 //we will assign the left to the leftSubstr, and right to rightSubstr.
-//we are doing so, because we are keeping track of the minimum window index so we can later return the correct window substring
+//we are doing so, because we are keeping track of the minimum window index so we can later return the 
+// correct window substring
 
 
 
