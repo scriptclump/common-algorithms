@@ -1,14 +1,9 @@
 // 349. Intersection of Two Arrays
 // Easy
 
-// 3950
 
-// 2028
-
-// Add to List
-
-// Share
-// Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+// Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique 
+// and you may return the result in any order.
 
  
 
@@ -33,6 +28,7 @@
 // 1,098,797
 
 /**
+ * Sliding Window Approach
  * @param {number[]} nums1
  * @param {number[]} nums2
  * @return {number[]}
@@ -40,3 +36,18 @@
  var intersection = function(nums1, nums2) {
     
 };
+
+/**
+ * Brute force Approach
+ * @param {*} nums1 
+ * @param {*} nums2 
+ */
+var intersectionBf = function(nums1, nums2) {
+    
+};
+
+// Test Cases:
+const nums1 = [1,2,2,1], nums2 = [2,2]  // [2]
+// const nums1 = [4,9,5], nums2 = [9,4,9,8,4] //  [9,4] or [4,9]
+
+console.log("Res", intersectionBf(nums1, nums2))

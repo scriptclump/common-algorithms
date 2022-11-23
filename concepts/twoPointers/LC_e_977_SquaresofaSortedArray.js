@@ -1,14 +1,7 @@
 // 977. Squares of a Sorted Array
-// Easy
 
-// 6831
-
-// 173
-
-// Add to List
-
-// Share
-// Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+// Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number 
+// sorted in non-decreasing order.
 
  
 
