@@ -1,13 +1,6 @@
 // 680. Valid Palindrome II
 // Easy
 
-// 6544
-
-// 336
-
-// Add to List
-
-// Share
 // Given a string s, return true if the s can be palindrome after deleting at most one character from it.
 
  
@@ -42,5 +35,23 @@
  * @return {boolean}
  */
  var validPalindrome = function(s) {
-    
+    let left = 0, right = s.length -1, found = 0;
+    while(left < right){
+        if(s[left].toLowerCase() !== s[right].toLowerCase() ){
+            found++;
+            if(found > 1){
+                return false;
+            }
+        }
+        left++;
+        right--;
+    }
+    return true;
 };
+
+// Test Cases:
+//  const s = "aba"; // true
+//  const s = "abca"; // true
+//  const s = "abc"; // false
+const s = "abcd";
+console.log("Res:", validPalindrome(s));
