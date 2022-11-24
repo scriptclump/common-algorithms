@@ -27,6 +27,7 @@
 // Submissions
 // 1,098,797
 
+
 /**
  * Sliding Window Approach
  * @param {number[]} nums1
@@ -39,6 +40,7 @@
 
 /**
  * Brute force Approach
+ * Time complexity O(n)
  * @param {*} nums1 
  * @param {*} nums2 
  */
@@ -54,8 +56,32 @@ var intersectionBf = function(nums1, nums2) {
     return res;
 };
 
-// Test Cases:
-// const nums1 = [1,2,2,1], nums2 = [2,2]  // [2]
-//  const nums1 = [4,9,5], nums2 = [9,4,9,8,4] //  [9,4] or [4,9]
+/**
+ * HashMap Approach 
+ * Space complexity S(n)
+ * @param {*} nums1 
+ * @param {*} nums2 
+ */
+ var intersectionHashMap = function(nums1, nums2) {
+    let map = new Map();
+    let res = [];
+    
+    // Adding nums1 elements to map with zero count
+    for (let i = 0; i < nums1.length; i++) {
+       map.set(nums1[i], 0);
+    }
 
-console.log("Res", intersectionBf(nums1, nums2))
+    for (let i = 0; i < nums2.length; i++) {
+        if(map.get(nums2[i]) === 0){
+            map.set(nums2[i], map.get(nums2[i]) + 1);
+            res.push(nums2[i]);
+        }
+    }
+    return res;
+};
+
+// Test Cases:
+// const nums1 = [1,2,2,1], nums2 = [2,2];  // [2]
+ const nums1 = [4,9,5], nums2 = [9,4,9,8,4]; //  [9,4] or [4,9]
+
+console.log("Res", intersectionHashMap(nums1, nums2))
