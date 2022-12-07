@@ -35,5 +35,20 @@
  * @return {number[]}
  */
  var sortedSquares = function(nums) {
-    
+    let left = 0, right = nums.length -1, res = [];
+    for (let i = nums.length -1; i >= 0; i--) {
+       let leftAbsVal = Math.abs(nums[left]);
+       let rightAbsVal = Math.abs(nums[right]);
+       if(leftAbsVal >= rightAbsVal){
+            res[i] = leftAbsVal * leftAbsVal;
+            left++;
+       } else{
+            res[i] = rightAbsVal * rightAbsVal;
+            right--;
+       }
+    }
+    return res;
 };
+
+let nums = [-4,-1,0,3,10]; // Output: [0,1,9,16,100]
+console.log("Res", sortedSquares(nums));
