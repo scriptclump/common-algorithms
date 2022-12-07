@@ -34,8 +34,22 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
- var intersection = function(nums1, nums2) {
-    
+ var intersectionTwoPointer = function(nums1, nums2) {
+    let i = 0, j=0, res = [];
+    nums1.sort(function(a, b){return a - b});
+    nums2.sort(function(a, b){return a - b});
+    while (i <= nums1.length && j <= nums2.length) {
+        if(nums1[i] === nums2[j]){
+            res.push(nums1[i]);
+            i++
+            j++
+        } else if (nums1[i] > nums2[j]) {
+            j++;
+        } else {
+            i++;
+        }
+    }
+    return res;
 };
 
 /**
@@ -84,4 +98,6 @@ var intersectionBf = function(nums1, nums2) {
 // const nums1 = [1,2,2,1], nums2 = [2,2];  // [2]
  const nums1 = [4,9,5], nums2 = [9,4,9,8,4]; //  [9,4] or [4,9]
 
-console.log("Res", intersectionHashMap(nums1, nums2))
+// console.log("Res", intersectionBf(nums1, nums2)) // Time complaxity issues
+// console.log("Res", intersectionHashMap(nums1, nums2)) // Space complaxity issues
+console.log("Res", intersectionTwoPointer(nums1, nums2)) // Most optimized, if array is sorted

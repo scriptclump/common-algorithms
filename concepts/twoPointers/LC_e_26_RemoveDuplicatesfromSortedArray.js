@@ -72,6 +72,6 @@
 };
 
 //const nums = [1,1,2];
-const nums = [0,0,1,1,1,2,2,3,3,4];
+const nums = [0,0,1,1,1,2,2,3,3,4]; // 5
 // const nums = [0,0,0,0];
 console.log("Ans: ", removeDuplicates(nums))
