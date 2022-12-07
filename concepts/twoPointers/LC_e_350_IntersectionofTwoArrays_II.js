@@ -41,7 +41,7 @@
  * @return {number[]}
  */
  var intersectHashMap = function(nums1, nums2) {
-    let i=0, j=0, res = [], m = new Map();
+    let res = [], m = new Map();
     
     // Setup the map for compare from first array
     for (let i = 0; i < nums1.length; i++) {
