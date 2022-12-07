@@ -40,6 +40,30 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
- var intersect = function(nums1, nums2) {
+ var intersectHashMap = function(nums1, nums2) {
+    let i=0, j=0, res = [], m = new Map();
     
+    // Setup the map for compare from first array
+    for (let i = 0; i < nums1.length; i++) {
+        if(!m.get(nums1[i])){
+            m.set(nums1[i], 1)
+        } else{
+            m.set(nums1[i],  m.get(nums1[i]) + 1) 
+        }        
+    }
+    // Check the values in res
+    for (let j = 0; j < nums2.length; j++) {
+        if(m.get(nums2[j]) > 0 ){
+            m.set( nums2[j], m.get(nums2[j]) - 1);
+            res.push(nums2[j])
+        }
+        
+    }
+
+    return res;
+
 };
+
+let nums1 = [1,2,2,1], nums2 = [2,2]; // 
+// let nums1 = [4,9,5], nums2 = [9,4,9,8,4] // [4,9]
+console.log(intersectHashMap(nums1, nums2))
