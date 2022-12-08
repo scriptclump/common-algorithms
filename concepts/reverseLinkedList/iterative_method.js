@@ -47,7 +47,7 @@ function reverse(node) {
 // prints content of double linked list
 function printList(node) {
   while (node != null) {
-    console.log(node.data + " ");
+    console.log(node.data);
     node = node.next;
   }
 }
