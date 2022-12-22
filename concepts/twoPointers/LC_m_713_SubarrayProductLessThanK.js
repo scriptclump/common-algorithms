@@ -43,7 +43,7 @@ Subarray size (right - left + 1) gives the number of new sub-arrays generated up
 For example, 
 What is the total number of sub-arrays of [10,4,2,1]?
 
-right: []
+start: []
 add 10: [10] -> +1 -> [10]
 add 4: [10,4] -> +2 -> [4], [10,4]
 add 2: [10,4,2] -> +3 -> [2], [4,2], [10,4,2]
@@ -59,14 +59,14 @@ var numSubarrayProductLessThanK = function(nums, k) {
         return 0;
     }
     if (k <= 1) return 0;
-    let right = 0, product = 1, count = 0;
-    for (let left = 0; left < nums.length; left++) {
-        product *= nums[left];
+    let start = 0, product = 1, count = 0;
+    for (let end = 0; end < nums.length; end++) {
+        product *= nums[end];
         // ensure subarray product is less than k
-        while (product >= k && right <= left) {
-            product /= nums[right++];
+        while (product >= k && start <= end) {
+            product /= nums[start++];
         }
-        count += left - right + 1;
+        count += end - start + 1;
     }
     return count;
     // T.C: O(N)
